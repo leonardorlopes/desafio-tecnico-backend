@@ -15,27 +15,31 @@ function validateRequest(schema: SchemaOf<CardSchema>) {
 
             validateToken();
 
-            var mustValidatePath = false;
-            var mustValidateCardExist = false;
-            var mustValidateBody = false;
-            var method = req.method;
-            var pathId = '';
+            let mustValidatePath = false;
+            let mustValidateCardExist = false;
+            let mustValidateBody = false;
+            const method = req.method;
+            let pathId = '';
 
             switch (method) {
                 
                 case 'POST':
                     mustValidateBody = true;
+                    break;
                 case 'PUT':
                     pathId = req.params['id'];
                     mustValidatePath = true;
                     mustValidateCardExist = true;
                     mustValidateBody = true;
+                    break;
                 case 'DELETE':
                     pathId = req.params['id'];
                     mustValidatePath = true;
                     mustValidateCardExist = true;
+                    break;
                 default:
                     next();
+                    break;
             }
 
             if (mustValidatePath && (!pathId || pathId != req.body.id))

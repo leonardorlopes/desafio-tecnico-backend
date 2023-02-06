@@ -13,8 +13,8 @@ export function validateUser(schema: SchemaOf<UserSchema>) {
             req.body = validatedReqBody;
             next();
 
-        } catch (error: any) {
-            res.status(500).json(error.message);
+        } catch (error) {
+            res.status(500).json("User input is a not valid User.");
         }
     };
 }

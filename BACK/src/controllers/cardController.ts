@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request } from 'express';
 import { get, post, put, del } from '../services/cardService';
 import { CardResponse, CardsResponse } from '../types/cardType';
 

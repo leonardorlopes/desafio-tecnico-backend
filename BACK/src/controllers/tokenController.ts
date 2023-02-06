@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request } from 'express';
 import { validateLogin } from '../services/userService';
 
 function getToken(req: Request): string {

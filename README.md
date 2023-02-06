@@ -16,20 +16,31 @@ Para realizar a conexão com o banco de dados foi escolhido o [mongoose](https:/
 Visando atender aos requisitos, a aplicação utiliza validação de token JWT, garantindo que o client esteja autenticado para consumir os recursos do backend.
 As validações de entrada de dados estão distribuidas entre os middlewares.
 
-# Solução proposta
+Será utilizado o ESLint como linter da aplicação.
+
+### Solução proposta
  
  ![Arquitetura](/images/Arquitetura.png)
+
  
- ## Execução
+### Execução
 
 Para executar o projeto e suas dependências, foi utilizado o Docker, visando facilitar a execução da aplicação
 
-Para executar:
+- Para executar a aplicação conteinerizada:
   Primeiro devem ser setadas as variaveis de ambiente no arquvio /BACK/.env.
   Navegar até a raiz do projeto via terminal(de sua preferência) 
   Executar o comando `docker-compose up`
 
-### Aplicação (desafio-tecnico-backend)
+- Para executar o linter:
+  Navegar até a pasta /BACK do projeto via terminal(de sua preferência)
+  Executar o comando `npm run lint`, 
+
+- Para executar o linter com correção de erros: 
+  Executar o comando `npm run lint-and-fix`
+
+
+### Acessando a Aplicação (desafio-tecnico-backend)
 
 Frontend: http://localhost:3000
 Backend: http://localhost:5000

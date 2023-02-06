@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
 const jwt = require('jsonwebtoken');
-const TOKEN_EXPIRED_ERROR = 'TokenExpiredError';
 
 export function validateToken() {
     return async (
@@ -23,10 +22,8 @@ export function validateToken() {
                 console.info('Token is valid to user: ' + decoded.user);
                 next();
             }
-            catch (e: any) {
-                if (e.name === TOKEN_EXPIRED_ERROR) {
-                    return res.sendStatus(401).json("Token expired");
-                }
+            catch (err) {
+                return res.sendStatus(401).json("Token is not valid");
             }
         }
     };
