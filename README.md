@@ -25,6 +25,7 @@ As validações de entrada de dados estão distribuidas entre os middlewares.
 Para executar o projeto e suas dependências, foi utilizado o Docker, visando facilitar a execução da aplicação
 
 Para executar:
+  Primeiro devem ser setadas as variaveis de ambiente no arquvio /BACK/.env.
   Navegar até a raiz do projeto via terminal(de sua preferência)
   Executar o comando `docker-compose build` , em seguida:
   Executar o comando `docker-compose up`
@@ -34,5 +35,3 @@ Para executar:
 Frontend: http://localhost:3000
 Backend: http://localhost:5000
 Banco de dados: http://localhost:27017
-
-
