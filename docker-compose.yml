@@ -1,0 +1,44 @@
+version: '3.4'
+services:
+  mongodb-kanban:
+    image: mongo:latest
+    restart: always
+    ports:
+      - '27017:27017'
+    networks:
+      - network-app-mongo
+    volumes:
+      - mongodb-kanban-data:/data/db
+
+  backend:
+    build: ./BACK
+    restart: always
+    ports:
+      - '5000:5000'
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: yarn run dev
+    env_file:
+      - /BACK/.env
+    environment:
+      - DATABASE_CONN_STRING=mongodb://mongodb-kanban:27017/kanban
+      - APP_PORT=5000
+    depends_on:
+      - mongodb-kanban
+    networks:
+      - network-app-mongo
+
+  frontend:
+    build: ./FRONT    
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
+
+networks:
+  network-app-mongo:
+    driver: bridge
+volumes:
+  mongodb-kanban-data:
+    driver: local
