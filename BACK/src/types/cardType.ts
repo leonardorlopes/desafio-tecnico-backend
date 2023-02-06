@@ -1,12 +1,5 @@
 import { Document } from 'mongoose';
 
-export interface ReturnType<T> {
-  success: boolean;
-  status: number;
-  message: string;
-  data: T | string | null;
-}
-
 interface Data {
   id: string | null | undefined;
   titulo: string | null;
@@ -44,4 +37,3 @@ export interface CardDocument extends Document {
   createdAt: Date;
   updatedAt: Date;
 }
-

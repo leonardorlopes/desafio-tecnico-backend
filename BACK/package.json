@@ -1,7 +1,7 @@
 {
   "name": "backend-kanban-board",
   "version": "0.0.1",
-  "description": "Backend do Kanban Board /FRONT.",
+  "description": "Backend do Kanban Board",
   "main": "src/main.ts",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "dev": "nodemon src/main.ts",
     "build": "rm -rf build/ && prettier --write source/ && tsc",
     "lint": "eslint . --ext .ts",
-	"lint-and-fix": "eslint . --ext .ts --fix"
+    "lint-and-fix": "eslint . --ext .ts --fix"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",

@@ -15,10 +15,10 @@ function validateRequest(schema: SchemaOf<CardSchema>) {
 
             validateToken();
 
+            const method = req.method;
             let mustValidatePath = false;
             let mustValidateCardExist = false;
             let mustValidateBody = false;
-            const method = req.method;
             let pathId = '';
 
             switch (method) {

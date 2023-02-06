@@ -21,13 +21,13 @@ export async function get(): Promise<any> {
     }
 }
 
-export async function post(
-    cardInput: CreateCardInput
-): Promise<CardResponse> {
+export async function post(cardInput: CreateCardInput): Promise<CardResponse> {
 
     try {
+
         Card.init()
         const newCard = await Card.create(cardInput)
+
         return {
             status: 201,
             data: {
@@ -47,11 +47,10 @@ export async function post(
     }
 }
 
-export async function put(
-    cardInput: UpdateCardInput
-): Promise<CardResponse> {
+export async function put(cardInput: UpdateCardInput): Promise<CardResponse> {
 
     try {
+        
         const updatedCard = await Card.findByIdAndUpdate(cardInput.id,
             {
                 titulo: cardInput.titulo,
@@ -78,9 +77,7 @@ export async function put(
     }
 }
 
-export async function del(
-    id: string
-): Promise<CardsResponse> {
+export async function del(id: string): Promise<CardsResponse> {
 
     try {
 

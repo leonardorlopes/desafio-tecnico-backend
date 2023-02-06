@@ -1,7 +1,6 @@
 import { CardDocument } from 'src/types/cardType';
 import { Schema, model } from 'mongoose';
 
-
 const cardSchema = new Schema(
     {
         id: { type: Schema.Types.ObjectId, required: false },
