@@ -26,8 +26,7 @@ Para executar o projeto e suas dependências, foi utilizado o Docker, visando fa
 
 Para executar:
   Primeiro devem ser setadas as variaveis de ambiente no arquvio /BACK/.env.
-  Navegar até a raiz do projeto via terminal(de sua preferência)
-  Executar o comando `docker-compose build` , em seguida:
+  Navegar até a raiz do projeto via terminal(de sua preferência) 
   Executar o comando `docker-compose up`
 
 ### Aplicação (desafio-tecnico-backend)
