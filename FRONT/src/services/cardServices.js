@@ -1,6 +1,6 @@
 import api from '../services/api'
 
-const TOKEN_PATH = "/token"
+const TOKEN_PATH = "/login"
 const CARD_PATH = "/cards";
 const BYPASS_CREDENTIALS = { "userName": "letscode", "password": "lets@123" };
 

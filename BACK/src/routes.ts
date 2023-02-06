@@ -14,7 +14,7 @@ function routes(app: Express): void {
   );
 
   /* TOKEN */
-  app.post('/token', validateUser(userSchema), (_: Request, res: Response) => {
+  app.post('/login', validateUser(userSchema), (_: Request, res: Response) => {
     const response = getToken(_);
     res.status(200).json(response);
   });
